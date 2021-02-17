@@ -116,8 +116,8 @@ REPORTS_WITH_90_DAY_MAX = frozenset([
 
 REQUIRED_CONFIG_KEYS = [
     "start_date",
-    "oauth_client_id",
-    "oauth_client_secret",
+    "client_id",
+    "client_secret",
     "user_agent",
     "refresh_token",
     "customer_ids",
@@ -1021,8 +1021,8 @@ def do_discover(customer_ids):
 
 def create_sdk_client(customer_id):
     oauth2_client = oauth2.GoogleRefreshTokenClient(
-        CONFIG['oauth_client_id'], \
-        CONFIG['oauth_client_secret'], \
+        CONFIG['client_id'], \
+        CONFIG['client_secret'], \
         CONFIG['refresh_token'])
 
     sdk_client = adwords.AdWordsClient(CONFIG['developer_token'], \
